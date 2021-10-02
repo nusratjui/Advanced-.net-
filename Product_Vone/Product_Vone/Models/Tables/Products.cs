@@ -77,11 +77,11 @@ namespace Product_Vone.Models.Tables
         public int Delete(int id)
         {
             conn.Open();
-            string query = String.Format("Delete from Products where Id={0}", id);
+            string query = String.Format("Delete from Products where Id={0}",id);
             SqlCommand cmd = new SqlCommand(query, conn);
-            int res = cmd.ExecuteNonQuery();
+            int p = cmd.ExecuteNonQuery();
             conn.Close();
-            return res;
+            return p;
         }
 
 

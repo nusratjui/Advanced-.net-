@@ -61,7 +61,7 @@ namespace Product_Vone.Controllers
         public ActionResult Delete(int id)
         {
             Database db = new Database();
-            var s = db.Products.Delete(id);
+            var p = db.Products.Delete(id);
             return RedirectToAction("Index");
         }
     }
