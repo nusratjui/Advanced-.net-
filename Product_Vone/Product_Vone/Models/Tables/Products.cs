@@ -65,14 +65,13 @@ namespace Product_Vone.Models.Tables
             conn.Close();
             return s;
         }
-        public int Edit(Product p)
+        public void Edit(Product pr)
         {
-            conn.Open();
-            string query = String.Format("update Products set Name='{0}', Qty={1}, Price={2}, Des='{3}' where Id='{4}'", p.Name, p.Qty, p.Price, p.Des, p.Id);
+            string query = String.Format("update Products set Name='{0}', Qty={1}, Price={2}, Des='{3}' where Id='{4}'", pr.Name, pr.Qty, pr.Price, pr.Des, pr.Id);
             SqlCommand cmd = new SqlCommand(query, conn);
+            conn.Open();
             int n = cmd.ExecuteNonQuery();
             conn.Close();
-            return n;
         }
         public int Delete(int id)
         {

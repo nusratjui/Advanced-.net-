@@ -14,12 +14,10 @@ namespace Product_Vone.Controllers
         
         public ActionResult Index()
         {
-
             Database db = new Database();
             var products = db.Products.Get();
             return View(products);
-           
-
+       
         }
         [HttpGet]
         public ActionResult Create()
@@ -49,13 +47,9 @@ namespace Product_Vone.Controllers
         [HttpPost]
         public ActionResult Edit(Product p)
         {
-            if (ModelState.IsValid)
-            {
-                Database db = new Database();
-                db.Products.Edit(p);
-                return RedirectToAction("Index");
-            }
-            return View(p);
+             Database db = new Database();
+             db.Products.Edit(p);
+             return RedirectToAction("Index");          
         }
         [HttpGet]
         public ActionResult Delete(int id)

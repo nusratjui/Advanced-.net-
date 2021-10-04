@@ -15,7 +15,7 @@ namespace Product_Vone.Models
         public Database()
         {
             string connString = @"Server= DESKTOP-5B8CN0F\SQLEXPRESS; Database=UMS; Integrated Security=true";
-            SqlConnection conn = new SqlConnection(connString);
+            conn = new SqlConnection(connString);
             Products = new Products(conn);
         }
     }
