@@ -1,0 +1,25 @@
+﻿@model Product_Vone.Models.Entities.Product
+@{
+    ViewBag.Title = "Edit";
+}
+
+<h2>Edit</h2>
+<form action="/Product/Edit/@Model.Id" method="post">
+
+  
+
+    Name: <input type="text" class="form-control" value="@Model.Name" name="Name" />
+    @Html.ValidationMessageFor(m => m.Name, "", new { @class = "text-danger" })
+
+    Price: <input type="text" class="form-control" value="@Model.Price" name="Price" />
+    @Html.ValidationMessageFor(m => m.Price, "", new { @class = "text-danger" }) <br>
+
+    Quantity: <input type="text" class="form-control" value="@Model.Qty" name="Qty" />
+    @Html.ValidationMessageFor(m => m.Qty, "", new { @class = "text-danger" })  <br>
+
+    Description: <input type="text" class="form-control" value="@Model.Des" name="Des" />
+    @Html.ValidationMessageFor(m => m.Des, "", new { @class = "text-danger" }) <br>
+
+    <input type="submit" value="Update" class="btn btn-success">
+
+</form>

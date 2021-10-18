@@ -1,0 +1,30 @@
+﻿
+@model List<Product_Vone.Models.Entities.Product>
+@{ ViewBag.Title = "Shopping"; }
+
+<h2>Shopping</h2>
+<a href="/Product/ShowCart" class="btn btn-primary">Show Cart</a>
+<br />
+<table class="table table-bordered">
+    <tr>
+        <th>ID</th>
+        <th>Name</th>
+        <th>Price</th>
+        <th>Quantity</th>
+        <th>Description</th>
+       
+    </tr>
+    @foreach (var sh in Model)
+    {
+<tr>
+    <td>@sh.Id</td>
+    <td>@sh.Name</td>
+    <td>@sh.Price</td>
+    <td>@sh.Qty</td>
+    <td>@sh.Des</td>
+    <td><a href="/Product/AddtoCart/@sh.Id" class="btn btn-success">Add to Cart</a></td>
+
+</tr>}
+    
+</table>
+
